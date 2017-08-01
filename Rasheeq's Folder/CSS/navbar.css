@@ -1,5 +1,5 @@
-@font-face { font-family: Delicious; src: url('er.ttf'); } 
-@font-face { font-family: NewDelicious; src: url('er3.otf'); } 
+@font-face { font-family: Delicious; src: url('fonts/er.ttf'); } 
+@font-face { font-family: NewDelicious; src: url('fonts/er3.otf'); } 
 
 h1{
 	font-family: Delicious, sans-serif;

@@ -30,8 +30,8 @@
             </div>
           </div>
         </li>
-        <li><a href="contact.asp">Reviewers</a></li>
-        <li><a href="homeV2.html">Home</a></li>
+        <li><a href="reviewers.php">Reviewers</a></li>
+        <li><a href="home.php">Home</a></li>
       </ul>
 </header>
 </body>

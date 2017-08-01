@@ -5,16 +5,15 @@
 
 	<title>Reviewers</title>
 
-	
 	<link rel="stylesheet" href="CSS/cinetophiliaTheme.css">
 	<link rel="stylesheet" href="CSS/stylesReviewers.css">
-
+	
 </head>
 
 <body>
 
 	<?php include 'navbar.php';?>
-
+	
 	<h2>Top Reviewers</h2>
 
 	<table>

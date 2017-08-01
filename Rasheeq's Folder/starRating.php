@@ -7,12 +7,19 @@
 
 </head>
 <body>
-	<fieldset class="rating">
-	  <input type="radio" id="star5" name="rating" value="5" /><label class="full" for="star5" title="Awesome - 5 stars"></label>
-	  <input type="radio" id="star4" name="rating" value="4" /><label class="full" for="star4" title="Pretty good - 4 stars"></label>
-	  <input type="radio" id="star3" name="rating" value="3" /><label class="full" for="star3" title="Nice - 3 stars"></label>
-	  <input type="radio" id="star2" name="rating" value="2" /><label class="full" for="star2" title="Kinda bad - 2 stars"></label>
-	  <input type="radio" id="star1" name="rating" value="1" /><label class="full" for="star1" title="Very bad - 1 star"></label>
-	</fieldset>
+	<div class="stars">
+	  <form action="">
+	    <input class="star star-5" id="star-5" type="radio" name="star"/>
+	    <label class="star star-5" for="star-5"></label>
+	    <input class="star star-4" id="star-4" type="radio" name="star" checked="checked" />
+	    <label class="star star-4" for="star-4"></label>
+	    <input class="star star-3" id="star-3" type="radio" name="star"/>
+	    <label class="star star-3" for="star-3"></label>
+	    <input class="star star-2" id="star-2" type="radio" name="star"/>
+	    <label class="star star-2" for="star-2"></label>
+	    <input class="star star-1" id="star-1" type="radio" name="star"/>
+	    <label class="star star-1" for="star-1"></label>
+	  </form>
+	</div>
 </body>
 </html>
