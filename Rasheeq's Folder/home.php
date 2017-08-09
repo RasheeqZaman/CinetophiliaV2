@@ -70,10 +70,10 @@
 
 
 	<div>
-		<h2 style="background-color: #B8312F; border-radius: 0px 15px 15px 0px;">Reviewer's Pick<br/> of the Day</h2>
-		<div class="containerlarge" style="background-image: url(img/movie/img2.jpg);"></div>
+		<h2 style="background-color: #B8312F; border-radius: 0px 15px 15px 0px;">Editor's Pick<br/> of the Day</h2>
     <?php
-      $query = "SELECT * FROM movies";
+      $pick = "2";
+      $query = "SELECT * FROM movies where ID = ".$pick;
         $players_query_result = mysqli_query($conn,$query) or die(mysql_error());
         if(mysqli_num_rows($players_query_result) > 0)
         {
@@ -81,6 +81,7 @@
           {
     ?>
 
+    <div class="containerlarge" style="background-image: url(img/movie/img<?php echo $pick;?>.jpg);"></div>
 		<h3><?php echo $row['Title']; ?></h3>
 		<h4><?php echo $row['Release_date']; ?></h4>
 		<p><?php echo $row['details']; ?></p>
