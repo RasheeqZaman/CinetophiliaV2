@@ -33,7 +33,6 @@
       ?>
   		  <div class="mySlides fade">
           <img src="img/movie/img<?php echo $i;?>.jpg" style="width:100%">
-
         </div>
       <?php
         }
