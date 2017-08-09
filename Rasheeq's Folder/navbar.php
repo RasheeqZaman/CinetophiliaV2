@@ -11,7 +11,7 @@
 <header>
       <h1>Cinetophilia</h1>
       <ul>
-        <li><a href="UpcomingV2.html">Upcoming</a></li>
+        <li><a href="upcoming.php">Upcoming</a></li>
         <li>
           <div class="dropdown">
               <button class="dropbtn" onclick="location.href='topRatedMoviesV2.html'">Top Rated</button>

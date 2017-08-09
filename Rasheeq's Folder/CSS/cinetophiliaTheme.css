@@ -73,3 +73,23 @@ select{
   font-size: 25px;
   border: none;
 }
+
+table
+{
+  width: 100%;
+  padding: 20px;
+}
+tr
+{
+   height: 100%;
+}
+td{
+  font-family: NewDelicious, sans-serif;
+  font-size: 15px;
+  text-align: center;
+  padding: 15px;
+}
+th{
+  font-family: NewDelicious, sans-serif;
+  font-size: 25px;
+}
