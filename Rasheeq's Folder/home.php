@@ -59,7 +59,7 @@
     <?php
       for ($i=1; $i <= 5; $i++) {
     ?>
-        <div class="container" style="background-image: url(img/movie/img<?php echo $i;?>.jpg);" onclick="location.href='About Movies.html'"></div>
+        <div class="container" style="background-image: url(img/movie/img<?php echo $i;?>.jpg);" onclick="location.href='aboutMovies.php'"></div>
     <?php
       }
     ?>

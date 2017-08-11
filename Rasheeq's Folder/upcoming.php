@@ -23,7 +23,7 @@
 			</tr>
 
 			<?php
-      			$query = "SELECT * FROM movies";
+      			$query = "SELECT * from movies where release_Date > '2017-08-10'";
         		$players_query_result = mysqli_query($conn,$query) or die(mysql_error());
         		if(mysqli_num_rows($players_query_result) > 0)
         		{

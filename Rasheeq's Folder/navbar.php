@@ -14,12 +14,13 @@
         <li><a href="upcoming.php">Upcoming</a></li>
         <li>
           <div class="dropdown">
-              <button class="dropbtn" onclick="location.href='topRatedMoviesV2.html'">Top Rated</button>
+              <button class="dropbtn" onclick="location.href='topRated.php'">Top Rated</button>
               <div class="dropdown-content">
-                  <a href="topActionV2.html">Action</a>
+                  <a href="topGenre.php">Action</a>
               </div>
           </div>
         </li>
+        <!--
         <li>
           <div class="dropdown">
             <button class="dropbtn">Discover</button>
@@ -30,6 +31,7 @@
             </div>
           </div>
         </li>
+        -->
         <li><a href="reviewers.php">Reviewers</a></li>
         <li><a href="home.php">Home</a></li>
       </ul>

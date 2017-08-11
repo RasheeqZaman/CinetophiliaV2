@@ -13,6 +13,7 @@
 <body>
 
 	<?php include 'navbar.php';?>
+  	<?php include 'config.php';?>
 	
 	<h2>Top Reviewers</h2>
 
@@ -21,86 +22,102 @@
        		<col span="1" style="width: 30%;">
        		<col span="1" style="width: 70%;">
     	</colgroup>
+
+    	<?php
+      			$query = "SELECT * FROM reviewers ORDER BY rating DESC";
+        		$players_query_result = mysqli_query($conn,$query) or die(mysql_error());
+        		$i = 0;
+        		if(mysqli_num_rows($players_query_result) > 0 )
+        		{
+          			while ($row = mysqli_fetch_array($players_query_result))
+          			{
+    	?>
+
 		<tr valign="Top">
 			<td rowspan="2" align="right">
-				<div class="userpic" style="background-image: url(img/user/1.jpg);"></div>
+				<div class="userpic" style="background-image: url(img/user/<?php echo $row['img_id']; ?>);"></div>
 			</td>
 			<td>
-				<h3>Nahid Pranto</h3>
+				<h3><?php echo $row['user_name'] ?></h3>
 				<?php include 'starRating.php';?>
 			</td>
 		</tr>
 		<tr>
 			<td>
 				<table>
+
+				<?php
+	      			$newquery = "SELECT rrm.reviewer_id, m.title, rrm.review FROM reviewers_review_movies AS rrm INNER JOIN movies AS m ON m.id = rrm.movie_id WHERE rrm.reviewer_id = ".$row['r_id'];
+	        		$new_query_result = mysqli_query($conn,$newquery) or die(mysql_error());
+	        		$j = 0;
+	        		if(mysqli_num_rows($new_query_result) > 0)
+	        		{
+	          			while ($row2 = mysqli_fetch_array($new_query_result))
+	          			{
+    			?>
+
 					<tr>
-						<h4>Spider-Man:Homecoming</h4>
+						<h4><?php echo $row2['title']; ?></h4>
 					</tr>
 					<tr>
-						<p>I really loved this film</p>
+						<p><?php echo $row2['review']; ?></p>
 					</tr>
-					<tr>
-						<h4>Aynabaji</h4>
-					</tr>
-					<tr>
-						<p>Awesome film!</p>
-					</tr>
-					<tr>
-						<h4>Captain America:Civil War</h4>
-					</tr>
-					<tr>
-						<p>Nice movie :)</p>
-					</tr>
+
+				<?php
+							$j++;
+							if($j > 2){
+								break;
+		          			}
+		          		}
+		          	}
+    			?>
+
 				</table>
 			</td>
 		</tr>
 
-		<tr valign="Top">
-			<td rowspan="2" align="right">
-				<div class="userpic" style="background-image: url(img/user/2.jpg);"></div>
-			</td>
-			<td>
-				<h3>Afrina Zahan Mithila</h3>
-				<?php include 'starRating.php';?>
-			</td>
-		</tr>
-		<tr>
-			<td>
-				<table>
-					<tr>
-						<h4>Spider-Man:Homecoming</h4>
-					</tr>
-					<tr>
-						<p>I really loved this film</p>
-					</tr>
-					<tr>
-						<h4>Aynabaji</h4>
-					</tr>
-					<tr>
-						<p>Awesome film!</p>
-					</tr>
-					<tr>
-						<h4>Captain America:Civil War</h4>
-					</tr>
-					<tr>
-						<p>Nice movie :)</p>
-					</tr>
-				</table>
-			</td>
-		</tr>
+		<?php
+				$i++;
+				if($i > 2){
+					break;
+          			}
+				}
+        		}
+    	?>
+
 	</table>
 
 	<h2>Your Review</h2>
 
 	<select>
-  		<option value="mv1">Spider-Man:Homecoming</option>
-  		<option value="mv2">Aynabaji</option>
-  		<option value="mv3">Captain America:Civil War</option>
+
+	<?php
+	      			$newquery = "select title from movies";
+	        		$new_query_result = mysqli_query($conn,$newquery) or die(mysql_error());
+	        		$j = 0;
+	        		if(mysqli_num_rows($new_query_result) > 0)
+	        		{
+	          			while ($row2 = mysqli_fetch_array($new_query_result))
+	          			{
+    ?>
+
+  		<option value="mv<?php echo $j;?>"><?php echo $row2['title'];?></option>
+
+  	<?php
+							$j++;
+		          		}
+		          	}
+    ?>
+
 	</select>
-	<textarea rows="10" cols="80" class="searchTerm" placeholder="Write your Review here"></textarea>
-    <input type="submit" class="searchButton" value="Submit">
+
+	<form action="insert.php" method="post">
+		<textarea rows="10" cols="80" class="searchTerm" name="query" placeholder="Write your Review here"></textarea>
+    	<input type="submit" class="searchButton" name="submit" value="Submit">
+	</form>	
 
 
+  <?php include 'close.php'; ?>
 </body>
 
 </html>
