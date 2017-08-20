@@ -11,6 +11,7 @@
 <header>
       <h1>Cinetophilia</h1>
       <ul>
+        <li><a href="Signupandlogin.php">Login</a></li>
         <li><a href="upcoming.php">Upcoming</a></li>
         <li>
           <div class="dropdown">
