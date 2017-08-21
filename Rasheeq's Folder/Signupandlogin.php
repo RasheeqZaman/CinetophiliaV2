@@ -19,7 +19,7 @@
             }
 
             if(empty($email_err) && empty($password_err)){
-                $sql = "SELECT r_id, img_id FROM reviewers WHERE email = ? and password = ?";
+                $sql = "SELECT r_id FROM reviewers WHERE email = ? and password = ?";
 
                 if($stmt = mysqli_prepare($link, $sql)){
                     mysqli_stmt_bind_param($stmt, "ss", $param_email, $param_password);

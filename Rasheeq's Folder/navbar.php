@@ -21,22 +21,15 @@
                     <?php
                 }else{
                     ?>
-                    <div class="container2" style="background-image: url(img/user/img<?php echo $_SESSION['id'];?>.jpg);"></div>
+                    <div class="dropdown">
+                        <div class="container2" style="background-image: url(img/user/img<?php echo $_SESSION['id'];?>.jpg);"></div>
+                        <div class="dropdown-content">
+                            <a href="logout.php">Logout</a>
+                        </div>
+                    </div>
                     <?php
                 }
           ?>
-        
-        <!--
-        <a href="Signupandlogin.php">
-        <?php
-                session_start();
-                if(!isset($_SESSION['id']) || empty($_SESSION['id'])){
-                  echo "Login";
-                }else{
-                  echo $_SESSION['id'];
-                }
-        ?></a>
-        -->
         </li>
         <li><a href="upcoming.php">Upcoming</a></li>
         <li>
