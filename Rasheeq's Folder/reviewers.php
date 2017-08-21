@@ -89,30 +89,27 @@
 
 	<h2>Your Review</h2>
 
-	<select>
-
-	<?php
-	      			$newquery = "select title from movies";
-	        		$new_query_result = mysqli_query($link, $newquery) or die(mysql_error());
-	        		$j = 0;
-	        		if(mysqli_num_rows($new_query_result) > 0)
-	        		{
-	          			while ($row2 = mysqli_fetch_array($new_query_result))
-	          			{
-    ?>
-
-  		<option value="mv<?php echo $j;?>"><?php echo $row2['title'];?></option>
-
-  	<?php
-							$j++;
-		          		}
-		          	}
-    ?>
-
-	</select>
-
 	<form action="insert.php" method="post">
-		<textarea rows="10" cols="80" class="searchTerm" name="query" placeholder="Write your Review here"></textarea>
+		<select name="movie_select">
+			<?php
+			      			$newquery = "select id, title from movies";
+			        		$new_query_result = mysqli_query($link, $newquery) or die(mysql_error());
+			        		$j = 0;
+			        		if(mysqli_num_rows($new_query_result) > 0)
+			        		{
+			          			while ($row2 = mysqli_fetch_array($new_query_result))
+			          			{
+		    ?>
+
+		  		<option value="<?php echo $row2['id']; ?>"><?php echo $row2['title'];?></option>
+
+		  	<?php
+									$j++;
+				          		}
+				          	}
+		    ?>
+		</select>
+		<textarea rows="10" cols="80" class="searchTerm" name="reviewing_place" placeholder="Write your Review here"></textarea>
     	<input type="submit" class="searchButton" name="submit" value="Submit">
 	</form>	
 

@@ -40,18 +40,6 @@
               </div>
           </div>
         </li>
-        <!--
-        <li>
-          <div class="dropdown">
-            <button class="dropbtn">Discover</button>
-            <div class="dropdown-content">
-                <a href="#">Horror</a>
-                <a href="#">Action</a>
-                <a href="#">Comedy</a>
-            </div>
-          </div>
-        </li>
-        -->
         <li><a href="reviewers.php">Reviewers</a></li>
         <li><a href="home.php">Home</a></li>
       </ul>
