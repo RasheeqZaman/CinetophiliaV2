@@ -25,7 +25,7 @@
 
     	<?php
       			$query = "SELECT * FROM reviewers ORDER BY rating DESC";
-        		$players_query_result = mysqli_query($conn,$query) or die(mysql_error());
+        		$players_query_result = mysqli_query($link, $query) or die(mysql_error());
         		$i = 0;
         		if(mysqli_num_rows($players_query_result) > 0 )
         		{
@@ -48,7 +48,7 @@
 
 				<?php
 	      			$newquery = "SELECT rrm.reviewer_id, m.title, rrm.review FROM reviewers_review_movies AS rrm INNER JOIN movies AS m ON m.id = rrm.movie_id WHERE rrm.reviewer_id = ".$row['r_id'];
-	        		$new_query_result = mysqli_query($conn,$newquery) or die(mysql_error());
+	        		$new_query_result = mysqli_query($link, $newquery) or die(mysql_error());
 	        		$j = 0;
 	        		if(mysqli_num_rows($new_query_result) > 0)
 	        		{
@@ -93,7 +93,7 @@
 
 	<?php
 	      			$newquery = "select title from movies";
-	        		$new_query_result = mysqli_query($conn,$newquery) or die(mysql_error());
+	        		$new_query_result = mysqli_query($link, $newquery) or die(mysql_error());
 	        		$j = 0;
 	        		if(mysqli_num_rows($new_query_result) > 0)
 	        		{

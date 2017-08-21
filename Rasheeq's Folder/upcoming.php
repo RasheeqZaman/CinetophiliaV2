@@ -24,7 +24,7 @@
 
 			<?php
       			$query = "SELECT * from movies where release_Date > '2017-08-10'";
-        		$players_query_result = mysqli_query($conn,$query) or die(mysql_error());
+        		$players_query_result = mysqli_query($link, $query) or die(mysql_error());
         		if(mysqli_num_rows($players_query_result) > 0)
         		{
           			while ($row = mysqli_fetch_array($players_query_result))
@@ -50,14 +50,6 @@
           			}
         		}
     		?>
-			<!--
-			<tr>
-				<td><img src="img/movie/img3.jpg"></td>
-				<td width="20%">Cars 3</td>
-				<td width="50%", class="hovering"><p>Lightning McQueen sets out to prove to a new generation of racers that he's still the best race car in the world </p><a href="#">(see more..)</a></td>
-				<td width="10%">16/07/2017</td>
-				<td width="10%">89%</td></tr>
-			-->
 		</table>
 	</div>
 </body>

@@ -22,7 +22,7 @@
   </tr>
   <?php
             $query = "select m.title, m.rating, mhg.genre_id, g.genre_type, count(rrm.reviewer_id) as total_review from movies as m inner join movies_has_genre as mhg on m.ID = mhg.movies_id inner join genre as g on g.genre_id = mhg.genre_id inner join reviewers_review_movies as rrm on m.id = rrm.movie_id where g.genre_id = 1 group by (m.id) order by rating desc";
-            $players_query_result = mysqli_query($conn,$query) or die(mysql_error());
+            $players_query_result = mysqli_query($link, $query) or die(mysql_error());
             $i = 0;
             if(mysqli_num_rows($players_query_result) > 0 )
             {
@@ -43,36 +43,6 @@
           }
   ?>
 
-  <!--
-  <tr>
-    <td>2</td>
-    <td>97.5%</td>
-    <td>Life Is Beautiful</td>
-    <td>1200</td>
-  </tr>
-
-  <tr>
-            <td>3</td>
-            <td>98%</td>
-            <td>Moonlight</td><td>1200</td>
-          </tr>
-          <tr>
-            <td>4</td><td>96%</td><td>The Jungle Book</td><td>1280</td>
-          </tr>
-          <tr>
-            <td>5</td><td>92%</td><td>La La Land</td><td>1100</td>
-          </tr>
-          <tr>
-            <td>6</td><td>93%</td><td>Finding Dory</td><td>200</td>
-          </tr>
-          <tr>
-            <td>7</td><td>91%</td><td>Moana</td><td>1250</td>
-          </tr>
-
-          <tr>
-            <td>8</td><td>97%</td><td>Zootapia</td><td>1300</td>
-          </tr>
--->
 </table>
 <?php include 'close.php'; ?>
 </body>

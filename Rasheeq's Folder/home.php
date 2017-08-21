@@ -73,7 +73,7 @@
     <?php
       $pick = "2";
       $query = "SELECT * FROM movies where ID = ".$pick;
-        $players_query_result = mysqli_query($conn,$query) or die(mysql_error());
+        $players_query_result = mysqli_query($link, $query) or die(mysql_error());
         if(mysqli_num_rows($players_query_result) > 0)
         {
           while ($row = mysqli_fetch_array($players_query_result))

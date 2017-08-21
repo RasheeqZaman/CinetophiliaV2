@@ -5,11 +5,11 @@
 	$dbname = "cinetophilia_database";
 	// Create connection
 
-	$conn = new mysqli($servername, $username, $password,$dbname);
-	// Check connection
-	if ($conn->connect_error) {
-		die("Connection failed: " . mysqli_connect_error());
+	$link = mysqli_connect($servername, $username, $password,$dbname);
+
+	if (mysqli_connect_errno()) {
+	    printf("Connect failed: %s\n", mysqli_connect_error());
+	    exit();
 	}
-	
-	//echo "Connected successfully" . "<br >";
+
 ?>

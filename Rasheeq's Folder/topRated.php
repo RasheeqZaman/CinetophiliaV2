@@ -17,7 +17,7 @@
   			<table>
         <?php
             $query = "SELECT title, rating, release_Date from movies where release_Date between '2017-01-01' and '2017-08-10' order by rating desc";
-            $players_query_result = mysqli_query($conn,$query) or die(mysql_error());
+            $players_query_result = mysqli_query($link, $query) or die(mysql_error());
             $i = 0;
             if(mysqli_num_rows($players_query_result) > 0 )
             {
@@ -45,7 +45,7 @@
         <table>
         <?php
             $query = "SELECT title, rating, release_Date from movies order by rating desc";
-            $players_query_result = mysqli_query($conn,$query) or die(mysql_error());
+            $players_query_result = mysqli_query($link, $query) or die(mysql_error());
             $i = 0;
             if(mysqli_num_rows($players_query_result) > 0 )
             {
@@ -72,7 +72,7 @@
         <table>
         <?php
             $query = "SELECT title, rating, release_Date from movies where release_Date between '2016-01-01' and '2016-12-31' order by rating desc";
-            $players_query_result = mysqli_query($conn,$query) or die(mysql_error());
+            $players_query_result = mysqli_query($link, $query) or die(mysql_error());
             $i = 0;
             if(mysqli_num_rows($players_query_result) > 0 )
             {
@@ -99,7 +99,7 @@
           <table>
         <?php
             $query = "SELECT title, rating, release_Date from movies where release_Date between '2015-01-01' and '2015-12-31' order by rating desc";
-            $players_query_result = mysqli_query($conn,$query) or die(mysql_error());
+            $players_query_result = mysqli_query($link, $query) or die(mysql_error());
             $i = 0;
             if(mysqli_num_rows($players_query_result) > 0 )
             {
@@ -126,7 +126,7 @@
         <table>
         <?php
             $query = "SELECT title, rating, release_Date from movies where release_Date between '2014-01-01' and '2014-12-31' order by rating desc";
-            $players_query_result = mysqli_query($conn,$query) or die(mysql_error());
+            $players_query_result = mysqli_query($link, $query) or die(mysql_error());
             $i = 0;
             if(mysqli_num_rows($players_query_result) > 0 )
             {

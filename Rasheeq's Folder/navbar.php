@@ -11,7 +11,33 @@
 <header>
       <h1>Cinetophilia</h1>
       <ul>
-        <li><a href="Signupandlogin.php">Login</a></li>
+        <li>
+
+          <?php
+                session_start();
+                if(!isset($_SESSION['id']) || empty($_SESSION['id'])){
+                    ?>
+                    <a href="Signupandlogin.php">Login</a>
+                    <?php
+                }else{
+                    ?>
+                    <div class="container2" style="background-image: url(img/user/img<?php echo $_SESSION['id'];?>.jpg);"></div>
+                    <?php
+                }
+          ?>
+        
+        <!--
+        <a href="Signupandlogin.php">
+        <?php
+                session_start();
+                if(!isset($_SESSION['id']) || empty($_SESSION['id'])){
+                  echo "Login";
+                }else{
+                  echo $_SESSION['id'];
+                }
+        ?></a>
+        -->
+        </li>
         <li><a href="upcoming.php">Upcoming</a></li>
         <li>
           <div class="dropdown">
