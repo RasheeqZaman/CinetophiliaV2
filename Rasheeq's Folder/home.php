@@ -57,11 +57,25 @@
 	<div>
 		<h2 style="background-color: #B8312F; border-radius: 0px 15px 15px 0px;">Weekend Box Office</h2>
     <?php
-      for ($i=1; $i <= 5; $i++) {
+              $newquery = "select movie_id, m.image_id from daily_box_office as dbo inner join movies as m on m.id = dbo.movie_id where date between DATE_SUB(NOW(), INTERVAL 7 DAY) and NOW() group by movie_id order by sum(amount) desc";
+              $new_query_result = mysqli_query($link, $newquery) or die(mysql_error());
+              $j = 0;
+              if(mysqli_num_rows($new_query_result) > 0)
+              {
+                  while ($row2 = mysqli_fetch_array($new_query_result))
+                  {
     ?>
-        <div class="container" style="background-image: url(img/movie/img<?php echo $i;?>.jpg);" onclick="location.href='aboutMovies.php'"></div>
+        <div 
+          class="container" 
+          style="background-image: url(img/movie/<?php echo $row2['image_id'];?>);" 
+          onclick="location.href='aboutMovies.php?movie_id=<?php echo $row2['movie_id'];?>'"></div>
     <?php
-      }
+                    $j++;
+                    if($j > 4){
+                      break;
+                    }
+                  }
+                }
     ?>
 	</div>
 

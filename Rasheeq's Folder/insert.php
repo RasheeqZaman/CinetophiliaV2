@@ -5,7 +5,7 @@
         	if($_SERVER["REQUEST_METHOD"] == "POST"){
 				session_start();
                 if(!isset($_SESSION['id']) || empty($_SESSION['id'])){
-                    header("location: home.php");
+                    header("location: Signupandlogin.php");
                 }else{
 	        		$user_id = $_SESSION['id'];
 	        		$movie_id = $_POST["movie_select"];
